@@ -8,7 +8,14 @@ file, this version uses Prototype JavaScript framework's
 (http://www.prototypejs.org) method of detecting when the DOM has loaded 
 before parsing stylesheets.
 
-Last revised: 9 July 2008
+To use, include this file in the <head> portion of a page and limit the fix 
+to IE 6 and below using conditional comments:
+
+  <!--[if lte IE 6]>
+  <script type="text/javascript" src="/javascripts/whatever_hover.js">
+  <![endif]-->
+
+Last revised: 6 September 2008
 
 Copyright (c) 2008 Jason Cheow, under the MIT license
 ---------------------------------------------------------------------------*/
