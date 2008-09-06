@@ -2,18 +2,18 @@
 Allows use of :hover, :active, and :focus pseudo-classes on non <a> elements 
 (for MSIE 5-6).
 
-This is originally Whatever:hover by Peter Nederlof 
-(http://www.xs4all.nl/~peterned/csshover.html), but instead of using a htc 
-file, this version uses Prototype JavaScript framework's 
-(http://www.prototypejs.org) method of detecting when the DOM has loaded 
-before parsing stylesheets.
-
 To use, include this file in the <head> portion of a page and limit the fix 
 to IE 6 and below using conditional comments:
 
   <!--[if lte IE 6]>
   <script type="text/javascript" src="/javascripts/whatever_hover.js">
   <![endif]-->
+
+This is originally Whatever:hover by Peter Nederlof 
+(http://www.xs4all.nl/~peterned/csshover.html), but instead of using a htc 
+file, this version uses Prototype JavaScript framework's 
+(http://www.prototypejs.org) method of detecting when the DOM has loaded 
+before parsing stylesheets (the framework itself is not needed).
 
 Last revised: 6 September 2008
 
