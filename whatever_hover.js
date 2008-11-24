@@ -15,8 +15,6 @@ file, this version uses Prototype JavaScript framework's
 (http://www.prototypejs.org) method of detecting when the DOM has loaded 
 before parsing stylesheets (the framework itself is not needed).
 
-Last revised: 6 September 2008
-
 Copyright (c) 2008 Jason Cheow, under the MIT license
 ---------------------------------------------------------------------------*/
 
