@@ -1,18 +1,18 @@
 /*---------------------------------------------------------------------------
-Allows use of :hover, :active, and :focus pseudo-classes on non <a> elements 
+Allows use of :hover, :active, and :focus pseudo-classes on non <a> elements
 (for MSIE 5-6).
 
-To use, include this file in the <head> portion of a page and limit the fix 
+To use, include this file in the <head> portion of a page and limit the fix
 to IE 6 and below using conditional comments:
 
   <!--[if lte IE 6]>
   <script type="text/javascript" src="/javascripts/whatever_hover.js">
   <![endif]-->
 
-This is originally Whatever:hover by Peter Nederlof 
-(http://www.xs4all.nl/~peterned/csshover.html), but instead of using a htc 
-file, this version uses Prototype JavaScript framework's 
-(http://www.prototypejs.org) method of detecting when the DOM has loaded 
+This is originally Whatever:hover by Peter Nederlof
+(http://www.xs4all.nl/~peterned/csshover.html), but instead of using a htc
+file, this version uses Prototype JavaScript framework's
+(http://www.prototypejs.org) method of detecting when the DOM has loaded
 before parsing stylesheets (the framework itself is not needed).
 
 Copyright (c) 2008 Jason Cheow, under the MIT license
@@ -54,7 +54,7 @@ Copyright (c) 2008 Jason Cheow, under the MIT license
   	if(!/MSIE (5|6)/.test(navigator.userAgent)) return;
   	window.attachEvent('onunload', unhookHoverEvents);
   	var sheets = doc.styleSheets, l = sheets.length;
-  	for(var i=0; i<l; i++) 
+  	for(var i=0; i<l; i++)
   		parseStylesheet(sheets[i]);
   }
   	function parseStylesheet(sheet) {
@@ -74,7 +74,7 @@ Copyright (c) 2008 Jason Cheow, under the MIT license
   	function parseCSSRule(rule) {
   		var select = rule.selectorText, style = rule.style.cssText;
   		if(!csshoverReg.test(select) || !style) return;
-		
+
   		var pseudo = select.replace(/[^:]+:([a-z-]+).*/i, 'on$1');
   		var newSelect = select.replace(/(\.([a-z0-9_-]+):[a-z]+)|(:[a-z]+)/gi, '.$2' + pseudo);
   		var className = (/\.([a-z0-9_-]*on(hover|active|unknown))/i).exec(newSelect)[1];
@@ -96,14 +96,14 @@ Copyright (c) 2008 Jason Cheow, under the MIT license
   }
   	function hookHoverEvent(node, type, handler) {
   		node.attachEvent(type, handler);
-  		hoverEvents[hoverEvents.length] = { 
-  			node:node, type:type, handler:handler 
+  		hoverEvents[hoverEvents.length] = {
+  			node:node, type:type, handler:handler
   		};
   	}
 
   	function unhookHoverEvents() {
   		for(var e,i=0; i<hoverEvents.length; i++) {
-  			e = hoverEvents[i]; 
+  			e = hoverEvents[i];
   			e.node.detachEvent(e.type, e.handler);
   		}
   	}
@@ -122,19 +122,19 @@ Copyright (c) 2008 Jason Cheow, under the MIT license
   			var element = doc.getElementById(identify[1]);
   			return element? [element]:nodes;
   		}
-		
+
   		var classname = (/\.([a-z0-9_-]+)/i).exec(select);
   		var tagName = select.replace(/(\.|\#|\:)[a-z0-9_-]+/i, '');
   		var classReg = classname? new RegExp('\\b' + classname[1] + '\\b'):false;
   		for(var i=0; i<elements.length; i++) {
-  			result = tagName? elements[i].all.tags(tagName):elements[i].all; 
+  			result = tagName? elements[i].all.tags(tagName):elements[i].all;
   			for(var j=0; j<result.length; j++) {
   				node = result[j];
   				if(classReg && !classReg.test(node.className)) continue;
   				nodes[nodes.length] = node;
   			}
-  		}	
-		
+  		}
+
   		return nodes;
   	}
 
