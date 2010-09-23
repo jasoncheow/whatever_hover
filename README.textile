@@ -1,0 +1,1 @@
+No longer maintained. "Selectivizr":http://selectivizr.com/ is a better choice for :hover support and more.
